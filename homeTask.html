@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home task with data</title>
+</head>
+<body>
+<div>Blok below shows the time</div>
+<br>
+<div id='date' style="font-size: 50px">
+    here should be a time
+</div>
+
+<script>
+    var myVar = setInterval(function(){ putDate() }, 1000);
+
+    function putDate() {
+        var date1 = new Date();
+        var ddate = date1.toISOString().slice(0, 19);
+        document.getElementById("date").innerHTML = ddate;
+    }
+</script>
+</body>
+</html>
