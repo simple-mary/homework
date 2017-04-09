@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hometask 9.04.17 jquery</title>
+    <script src="resources/jquery-3.2.0.min.js"></script>
+</head>
+<body>
+<p style="font-style: italic; font-size: large">Some list</p>
+<ul style="">
+    <li id="town1">Berlin</li>
+    <li id="flower1">Sunflower</li>
+    <li id="animal1">Dog</li>
+    <li id="town2">Kyiv</li>
+    <li id="flower2">Camomile</li>
+    <li id="animal2">Cat</li>
+    <li>Nothing</li>
+    <li id="town3">Barcelona</li>
+    <li id="flower3">Rose</li>
+    <li id="animal3">Bear</li>
+    <li id="town4">New York</li>
+    <li id="flower4">Lavender</li>
+    <li id="animal14">Rabbit</li>
+</ul>
+<script>
+
+    var townColor = prompt("What color for town", "");
+    var animalColor = prompt("What color for animal", "");
+    var flowerColor = prompt("What color for flower", "");
+
+    $(document).ready(function () {
+        var arr = $("li");
+        $("li").each(function () {
+            if ($(this)[0].id.toString().includes("town")) {
+                $(this).css('color', townColor).animate({ backgroundColor: townColor}, 1000);
+            }
+            if ($(this)[0].id.toString().includes("animal")) {
+                $(this).css('color', animalColor).animate({opacity: 0.1}, 100).delay(100).animate({opacity: 1}, 100).animate({opacity: 0.1}, 100).delay(100).animate({opacity: 1}, 100);
+            }
+            if ($(this)[0].id.toString().includes("flower")) {
+                $(this).css("color", flowerColor);
+            }
+        })
+    });
+
+ </script>
+</body>
+</html>
