@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regular expression</title>
+</head>
+<body>
+<diiv id="text"> Here is the text and the time
+    <!--<br> Time is 2017-04-16 11:42:15-->
+</diiv>
+<script>
+    function putDate() {
+        var date1 = new Date();
+        var ddate = date1.toISOString().slice(0, 19);
+        document.getElementById("text").innerHTML = ddate;
+    }
+
+    var t = document.onload = putDate();
+    var text = document.getElementById("text").textContent;
+    var exp = /\d{4}-\d+-\d+\w\d+\:\d+:\d+/img;
+    alert(text.match(exp));
+</script>
+
+</body>
+</html>
